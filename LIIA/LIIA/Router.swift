@@ -12,13 +12,19 @@ class Router: RouterProtocol {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
-        showHome()
+        showTabController()
     }
 
-    func showHome() {
-        let viewController = ViewController()
+    func showTabController() {
+        let loginViewController = LoginViewController()
+        let checkoutViewController = CheckoutViewController()
 
-        navigationController.setViewControllers([viewController], animated: true)
+        let tabbarController = UITabBarController()
+        tabbarController.setViewControllers([loginViewController, checkoutViewController], animated: true)
+
+        tabbarController.tabBar.backgroundColor = .white
+
+        navigationController.setViewControllers([tabbarController], animated: true)
     }
 
     func goBack() {

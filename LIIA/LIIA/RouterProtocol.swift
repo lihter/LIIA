@@ -4,7 +4,7 @@ protocol RouterProtocol {
 
     func start(in window: UIWindow)
 
-    func showHome()
+    func showTabController()
 
     func goBack()
 
