@@ -23,6 +23,12 @@
 		564267B729F5911000F387F6 /* UserDefaults+Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564267B629F5911000F387F6 /* UserDefaults+Admin.swift */; };
 		564267BB29F5975300F387F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564267BA29F5975300F387F6 /* HomeViewController.swift */; };
 		564267BD29F598CD00F387F6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564267BC29F598CD00F387F6 /* HomeViewModel.swift */; };
+		564267BF29F6DDAD00F387F6 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564267BE29F6DDAD00F387F6 /* CheckoutViewModel.swift */; };
+		564267C129F6F71000F387F6 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564267C029F6F71000F387F6 /* DataSource.swift */; };
+		564267C329F6F72200F387F6 /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564267C229F6F72200F387F6 /* DataSourceProtocol.swift */; };
+		564267C629F7013600F387F6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 564267C529F7013600F387F6 /* Realm */; };
+		564267C829F7013600F387F6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 564267C729F7013600F387F6 /* RealmSwift */; };
+		56B8333629F7021300975062 /* CreditCardDataDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8333529F7021300975062 /* CreditCardDataDBModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +49,10 @@
 		564267B629F5911000F387F6 /* UserDefaults+Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Admin.swift"; sourceTree = "<group>"; };
 		564267BA29F5975300F387F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		564267BC29F598CD00F387F6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		564267BE29F6DDAD00F387F6 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
+		564267C029F6F71000F387F6 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		564267C229F6F72200F387F6 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
+		56B8333529F7021300975062 /* CreditCardDataDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDataDBModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564267C829F7013600F387F6 /* RealmSwift in Frameworks */,
+				564267C629F7013600F387F6 /* Realm in Frameworks */,
 				564267A429F5736000F387F6 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +88,7 @@
 		5642678929F5707F00F387F6 /* LIIA */ = {
 			isa = PBXGroup;
 			children = (
+				564267C929F7016B00F387F6 /* Models */,
 				564267AB29F586F400F387F6 /* Extensions */,
 				564267AA29F5824A00F387F6 /* Protocols */,
 				564267A929F5823600F387F6 /* ViewControllers */,
@@ -85,6 +98,7 @@
 				5642679529F5708100F387F6 /* LaunchScreen.storyboard */,
 				5642679829F5708100F387F6 /* Info.plist */,
 				564267B429F58C1100F387F6 /* RASPService.swift */,
+				564267C029F6F71000F387F6 /* DataSource.swift */,
 			);
 			path = LIIA;
 			sourceTree = "<group>";
@@ -93,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				564267A529F57C9400F387F6 /* CheckoutViewController.swift */,
+				564267BE29F6DDAD00F387F6 /* CheckoutViewModel.swift */,
 				5642678E29F5707F00F387F6 /* LoginViewController.swift */,
 				564267AE29F5881600F387F6 /* LoginViewModel.swift */,
 				564267BA29F5975300F387F6 /* HomeViewController.swift */,
@@ -104,6 +119,7 @@
 		564267AA29F5824A00F387F6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				564267C229F6F72200F387F6 /* DataSourceProtocol.swift */,
 				564267A729F5822B00F387F6 /* ConstructViewsProtocol.swift */,
 				564267A029F5724400F387F6 /* RouterProtocol.swift */,
 			);
@@ -118,6 +134,14 @@
 				564267B629F5911000F387F6 /* UserDefaults+Admin.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		564267C929F7016B00F387F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56B8333529F7021300975062 /* CreditCardDataDBModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +162,8 @@
 			name = LIIA;
 			packageProductDependencies = (
 				564267A329F5736000F387F6 /* SnapKit */,
+				564267C529F7013600F387F6 /* Realm */,
+				564267C729F7013600F387F6 /* RealmSwift */,
 			);
 			productName = LIIA;
 			productReference = 5642678729F5707F00F387F6 /* LIIA.app */;
@@ -169,6 +195,7 @@
 			mainGroup = 5642677E29F5707F00F387F6;
 			packageReferences = (
 				564267A229F5736000F387F6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				564267C429F7013600F387F6 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 5642678829F5707F00F387F6 /* Products */;
 			projectDirPath = "";
@@ -196,14 +223,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564267C329F6F72200F387F6 /* DataSourceProtocol.swift in Sources */,
+				564267BF29F6DDAD00F387F6 /* CheckoutViewModel.swift in Sources */,
 				564267A829F5822B00F387F6 /* ConstructViewsProtocol.swift in Sources */,
 				564267B329F58A0500F387F6 /* Combine+Extensions.swift in Sources */,
+				564267C129F6F71000F387F6 /* DataSource.swift in Sources */,
 				564267AD29F5870500F387F6 /* Gestures+Extensions.swift in Sources */,
 				5642678F29F5707F00F387F6 /* LoginViewController.swift in Sources */,
 				5642679F29F5720800F387F6 /* Router.swift in Sources */,
 				564267AF29F5881600F387F6 /* LoginViewModel.swift in Sources */,
 				564267B529F58C1100F387F6 /* RASPService.swift in Sources */,
 				564267A129F5724400F387F6 /* RouterProtocol.swift in Sources */,
+				56B8333629F7021300975062 /* CreditCardDataDBModel.swift in Sources */,
 				564267BD29F598CD00F387F6 /* HomeViewModel.swift in Sources */,
 				564267B729F5911000F387F6 /* UserDefaults+Admin.swift in Sources */,
 				564267A629F57C9400F387F6 /* CheckoutViewController.swift in Sources */,
@@ -434,6 +465,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		564267C429F7013600F387F6 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.38.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -441,6 +480,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 564267A229F5736000F387F6 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		564267C529F7013600F387F6 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 564267C429F7013600F387F6 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		564267C729F7013600F387F6 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 564267C429F7013600F387F6 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -8,7 +8,7 @@ protocol RouterProtocol {
 
     func goBack()
 
-    func presentError(title: String?, message: String?)
+    func presentAlert(title: String?, message: String?)
 
     func login()
 

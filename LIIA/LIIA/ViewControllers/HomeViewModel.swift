@@ -7,6 +7,7 @@ class HomeViewModel {
     }
 
     func logout() {
+        print("User logged out")
         router.showLoginScreen()
     }
 

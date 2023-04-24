@@ -26,7 +26,7 @@ class Router: RouterProtocol {
         navigationController.popViewController(animated: true)
     }
 
-    func presentError(title: String?, message: String?) {
+    func presentAlert(title: String?, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
@@ -37,7 +37,8 @@ class Router: RouterProtocol {
         let homeViewModel = HomeViewModel(router: self)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
 
-        let checkoutViewController = CheckoutViewController()
+        let checkoutViewModel = CheckoutViewModel(router: self, dataSource: DataSource.shared)
+        let checkoutViewController = CheckoutViewController(viewModel: checkoutViewModel)
 
         let tabbarController = UITabBarController()
         tabbarController.tabBar.backgroundColor = .white
