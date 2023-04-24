@@ -22,7 +22,30 @@ class CheckoutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+
+        buildViews()
+    }
+
+}
+
+extension CheckoutViewController: ConstructViewsProtocol {
+
+    private func buildViews() {
+        createViews()
+        styleViews()
+        defineLayoutForViews()
+    }
+
+    func createViews() {
+
+    }
+
+    func styleViews() {
+        view.backgroundColor = .darkGray
+    }
+
+    func defineLayoutForViews() {
+
     }
 
 }
