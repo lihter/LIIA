@@ -7,6 +7,7 @@ import UIKit
 
 class RASPService {
 
+    // MARK: - Jailbreak detection
     static let appsPaths = [
         "/Applications/Cydia.app",
         "/Applications/blackra1n.app",
@@ -47,6 +48,13 @@ class RASPService {
             try "test".write(toFile: "test.txt", atomically: true, encoding: .utf8)
             return true
         } catch { return false }
+    }
+
+    // MARK: - Anti debugging detection
+    /// Anti debugging detection is also run at the start of the app in the 'main.swift'
+
+    static func isDebuggerAttached() -> Bool {
+        getppid() != 1
     }
 
 }

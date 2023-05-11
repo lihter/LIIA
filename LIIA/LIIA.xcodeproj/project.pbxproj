@@ -29,6 +29,8 @@
 		564267C629F7013600F387F6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 564267C529F7013600F387F6 /* Realm */; };
 		564267C829F7013600F387F6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 564267C729F7013600F387F6 /* RealmSwift */; };
 		56B8333629F7021300975062 /* CreditCardDataDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8333529F7021300975062 /* CreditCardDataDBModel.swift */; };
+		56C1521F2A0A45ED00BA5ACE /* arm_syscall.c in Sources */ = {isa = PBXBuildFile; fileRef = 56C1521E2A0A45ED00BA5ACE /* arm_syscall.c */; };
+		56C152212A0A469200BA5ACE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C152202A0A469200BA5ACE /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,10 @@
 		564267C029F6F71000F387F6 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		564267C229F6F72200F387F6 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
 		56B8333529F7021300975062 /* CreditCardDataDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDataDBModel.swift; sourceTree = "<group>"; };
+		56C1521C2A0A45ED00BA5ACE /* LIIA-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LIIA-Bridging-Header.h"; sourceTree = "<group>"; };
+		56C1521D2A0A45ED00BA5ACE /* arm_syscall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arm_syscall.h; sourceTree = "<group>"; };
+		56C1521E2A0A45ED00BA5ACE /* arm_syscall.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = arm_syscall.c; sourceTree = "<group>"; };
+		56C152202A0A469200BA5ACE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		5642678929F5707F00F387F6 /* LIIA */ = {
 			isa = PBXGroup;
 			children = (
+				56C1521B2A0A45C500BA5ACE /* RASP */,
 				564267C929F7016B00F387F6 /* Models */,
 				564267AB29F586F400F387F6 /* Extensions */,
 				564267AA29F5824A00F387F6 /* Protocols */,
@@ -97,8 +104,8 @@
 				5642679329F5708100F387F6 /* Assets.xcassets */,
 				5642679529F5708100F387F6 /* LaunchScreen.storyboard */,
 				5642679829F5708100F387F6 /* Info.plist */,
-				564267B429F58C1100F387F6 /* RASPService.swift */,
 				564267C029F6F71000F387F6 /* DataSource.swift */,
+				56C152202A0A469200BA5ACE /* main.swift */,
 			);
 			path = LIIA;
 			sourceTree = "<group>";
@@ -144,6 +151,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		56C1521B2A0A45C500BA5ACE /* RASP */ = {
+			isa = PBXGroup;
+			children = (
+				564267B429F58C1100F387F6 /* RASPService.swift */,
+				56C1521D2A0A45ED00BA5ACE /* arm_syscall.h */,
+				56C1521E2A0A45ED00BA5ACE /* arm_syscall.c */,
+				56C1521C2A0A45ED00BA5ACE /* LIIA-Bridging-Header.h */,
+			);
+			path = RASP;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +199,7 @@
 				TargetAttributes = {
 					5642678629F5707F00F387F6 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -235,8 +254,10 @@
 				564267B529F58C1100F387F6 /* RASPService.swift in Sources */,
 				564267A129F5724400F387F6 /* RouterProtocol.swift in Sources */,
 				56B8333629F7021300975062 /* CreditCardDataDBModel.swift in Sources */,
+				56C1521F2A0A45ED00BA5ACE /* arm_syscall.c in Sources */,
 				564267BD29F598CD00F387F6 /* HomeViewModel.swift in Sources */,
 				564267B729F5911000F387F6 /* UserDefaults+Admin.swift in Sources */,
+				56C152212A0A469200BA5ACE /* main.swift in Sources */,
 				564267A629F57C9400F387F6 /* CheckoutViewController.swift in Sources */,
 				5642678B29F5707F00F387F6 /* AppDelegate.swift in Sources */,
 				564267BB29F5975300F387F6 /* HomeViewController.swift in Sources */,
@@ -376,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y29SMM866B;
@@ -397,6 +419,8 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "LIIA/RASP/LIIA-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -407,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y29SMM866B;
@@ -428,6 +453,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "LIIA/RASP/LIIA-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

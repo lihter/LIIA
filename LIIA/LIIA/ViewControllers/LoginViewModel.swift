@@ -10,12 +10,15 @@ class LoginViewModel {
     }
 
     func handleLogin(username: String?, password: String?) {
-        guard !RASPService.isDeviceJailbroken() else {
+        guard
+            !RASPService.isDeviceJailbroken(),
+            !RASPService.isDebuggerAttached()
+        else {
             router.presentAlert(
-                title: "Jailbreak detected",
-                message: "You can't login if your device is jailbroken."
+                title: "RASP check failed",
+                message: "You can't login if you are maliciously using the app."
             )
-            print("Jailbreak detected!")
+            print("RASP check failed!")
             return
         }
 
