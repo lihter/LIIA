@@ -10,18 +10,6 @@ class LoginViewModel {
     }
 
     func handleLogin(username: String?, password: String?) {
-        guard
-            !RASPService.isDeviceJailbroken(),
-            !RASPService.isDebuggerAttached()
-        else {
-            router.presentAlert(
-                title: "RASP check failed",
-                message: "You can't login if you are maliciously using the app."
-            )
-            print("RASP check failed!")
-            return
-        }
-
         if username == "admin", password == "admin" {
             UserDefaults.standard.isAdmin = true
             print("User logged in as admin")
