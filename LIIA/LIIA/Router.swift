@@ -22,6 +22,13 @@ class Router: RouterProtocol {
         navigationController.setViewControllers([loginViewController], animated: true)
     }
 
+    func showOTPScreen() {
+        let otpViewModel = OTPViewModel(router: self)
+        let otpViewController = OTPViewController(viewModel: otpViewModel)
+
+        navigationController.pushViewController(otpViewController, animated: true)
+    }
+
     func goBack() {
         navigationController.popViewController(animated: true)
     }

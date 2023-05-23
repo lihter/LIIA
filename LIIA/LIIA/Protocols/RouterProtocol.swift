@@ -6,6 +6,8 @@ protocol RouterProtocol {
 
     func showLoginScreen()
 
+    func showOTPScreen()
+
     func goBack()
 
     func presentAlert(title: String?, message: String?)
