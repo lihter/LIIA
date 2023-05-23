@@ -27,6 +27,8 @@
 		564267C329F6F72200F387F6 /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564267C229F6F72200F387F6 /* DataSourceProtocol.swift */; };
 		564267C629F7013600F387F6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 564267C529F7013600F387F6 /* Realm */; };
 		564267C829F7013600F387F6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 564267C729F7013600F387F6 /* RealmSwift */; };
+		56675BDD2A1790E400EF09F1 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56675BDC2A1790E400EF09F1 /* OTPViewController.swift */; };
+		56675BDF2A17910000EF09F1 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56675BDE2A17910000EF09F1 /* OTPViewModel.swift */; };
 		56B8333629F7021300975062 /* CreditCardDataDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8333529F7021300975062 /* CreditCardDataDBModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		564267BE29F6DDAD00F387F6 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
 		564267C029F6F71000F387F6 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		564267C229F6F72200F387F6 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
+		56675BDC2A1790E400EF09F1 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		56675BDE2A17910000EF09F1 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		56B8333529F7021300975062 /* CreditCardDataDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDataDBModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +113,8 @@
 				564267AE29F5881600F387F6 /* LoginViewModel.swift */,
 				564267BA29F5975300F387F6 /* HomeViewController.swift */,
 				564267BC29F598CD00F387F6 /* HomeViewModel.swift */,
+				56675BDC2A1790E400EF09F1 /* OTPViewController.swift */,
+				56675BDE2A17910000EF09F1 /* OTPViewModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -235,6 +241,8 @@
 				564267BD29F598CD00F387F6 /* HomeViewModel.swift in Sources */,
 				564267B729F5911000F387F6 /* UserDefaults+Admin.swift in Sources */,
 				564267A629F57C9400F387F6 /* CheckoutViewController.swift in Sources */,
+				56675BDF2A17910000EF09F1 /* OTPViewModel.swift in Sources */,
+				56675BDD2A1790E400EF09F1 /* OTPViewController.swift in Sources */,
 				5642678B29F5707F00F387F6 /* AppDelegate.swift in Sources */,
 				564267BB29F5975300F387F6 /* HomeViewController.swift in Sources */,
 			);

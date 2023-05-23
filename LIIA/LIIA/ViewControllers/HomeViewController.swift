@@ -9,6 +9,8 @@ class HomeViewController: UIViewController {
 
     private var cancellables = Set<AnyCancellable>()
 
+    private var buttonContainer: UIStackView!
+    private var otpButton: UIButton!
     private var logoutButton: UIButton!
     private var privilagesLabel: UILabel!
 
@@ -40,6 +42,13 @@ class HomeViewController: UIViewController {
     }
 
     private func bindViews() {
+        otpButton
+            .throttledTap()
+            .sink { [weak self] _ in
+                self?.viewModel.handleOtpTapped()
+            }
+            .store(in: &cancellables)
+
         logoutButton
             .throttledTap()
             .sink { [weak self] _ in
@@ -67,8 +76,14 @@ extension HomeViewController: ConstructViewsProtocol {
     }
 
     func createViews() {
+        buttonContainer = UIStackView()
+        view.addSubview(buttonContainer)
+
+        otpButton = UIButton()
+        buttonContainer.addArrangedSubview(otpButton)
+
         logoutButton = UIButton()
-        view.addSubview(logoutButton)
+        buttonContainer.addArrangedSubview(logoutButton)
 
         privilagesLabel = UILabel()
         view.addSubview(privilagesLabel)
@@ -76,6 +91,14 @@ extension HomeViewController: ConstructViewsProtocol {
 
     func styleViews() {
         view.backgroundColor = .white
+
+        buttonContainer.axis = .vertical
+        buttonContainer.spacing = defaultMargin
+
+        otpButton.backgroundColor = .black
+        otpButton.setTitleColor(.white, for: .normal)
+        otpButton.setTitle("mToken", for: .normal)
+        otpButton.layer.cornerRadius = 10
 
         logoutButton.backgroundColor = .black
         logoutButton.setTitleColor(.white, for: .normal)
@@ -92,9 +115,16 @@ extension HomeViewController: ConstructViewsProtocol {
             $0.leading.trailing.equalToSuperview().inset(defaultMargin)
         }
 
-        logoutButton.snp.makeConstraints {
+        buttonContainer.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(defaultMargin)
             $0.centerY.equalToSuperview()
+        }
+
+        otpButton.snp.makeConstraints {
+            $0.height.equalTo(48)
+        }
+
+        logoutButton.snp.makeConstraints {
             $0.height.equalTo(48)
         }
     }

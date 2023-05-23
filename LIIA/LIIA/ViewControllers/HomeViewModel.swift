@@ -11,4 +11,9 @@ class HomeViewModel {
         router.showLoginScreen()
     }
 
+    func handleOtpTapped() {
+        print("Handle OTP tapped")
+        router.showOTPScreen()
+    }
+
 }
