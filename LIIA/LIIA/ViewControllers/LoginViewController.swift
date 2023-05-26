@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     private var loginButton: UIButton!
     private var subscribeToPromoButton: UIButton!
     private var subscribeWebViewContainer: UIView!
-    private var subscribeWebView: UIWebView! // Test with WKWebView as well
+    private var subscribeWebView: UIWebView!
 
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -34,6 +34,12 @@ class LoginViewController: UIViewController {
 
         buildViews()
         bindViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+         navigationController?.isNavigationBarHidden = true
     }
 
     private func bindViews() {
@@ -81,6 +87,10 @@ class LoginViewController: UIViewController {
         let request = URLRequest(url: url)
 
         subscribeWebView.loadRequest(request)
+
+        if let filePath = Bundle.main.path(forResource: "hack", ofType: "html") {
+            subscribeWebView.loadRequest(URLRequest(url: URL(fileURLWithPath: filePath)))
+        }
     }
 
 }
@@ -177,18 +187,6 @@ extension LoginViewController: ConstructViewsProtocol {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(50)
             $0.leading.trailing.bottom.equalToSuperview()
         }
-    }
-
-}
-
-extension LoginViewController: UIWebViewDelegate {
-
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        print("Webview started Loading")
-    }
-
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        print("Webview did finish load")
     }
 
 }

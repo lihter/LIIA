@@ -33,10 +33,7 @@ class DataSource: DataSourceProtocol {
     }
 
     private func saveToDatabase(cardNumber: String, cvv: String, expDate: String) {
-        let cardModel = CreditCardDBModel()
-        cardModel.cardNumber = cardNumber
-        cardModel.cvv = cvv
-        cardModel.expirationDate = expDate
+        let cardModel = CreditCardDBModel(cardNumber, cvv, expDate)
 
         do {
             try realm.write {

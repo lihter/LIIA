@@ -30,6 +30,7 @@
 		56675BDD2A1790E400EF09F1 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56675BDC2A1790E400EF09F1 /* OTPViewController.swift */; };
 		56675BDF2A17910000EF09F1 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56675BDE2A17910000EF09F1 /* OTPViewModel.swift */; };
 		56B8333629F7021300975062 /* CreditCardDataDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8333529F7021300975062 /* CreditCardDataDBModel.swift */; };
+		56CD596A2A20A8EF0068BDF1 /* hack.html in Resources */ = {isa = PBXBuildFile; fileRef = 56CD59692A20A8EF0068BDF1 /* hack.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		56675BDC2A1790E400EF09F1 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		56675BDE2A17910000EF09F1 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		56B8333529F7021300975062 /* CreditCardDataDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDataDBModel.swift; sourceTree = "<group>"; };
+		56CD59692A20A8EF0068BDF1 /* hack.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hack.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		5642677E29F5707F00F387F6 = {
 			isa = PBXGroup;
 			children = (
+				56CD59692A20A8EF0068BDF1 /* hack.html */,
 				5642678929F5707F00F387F6 /* LIIA */,
 				5642678829F5707F00F387F6 /* Products */,
 			);
@@ -215,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56CD596A2A20A8EF0068BDF1 /* hack.html in Resources */,
 				5642679729F5708100F387F6 /* LaunchScreen.storyboard in Resources */,
 				5642679429F5708100F387F6 /* Assets.xcassets in Resources */,
 			);

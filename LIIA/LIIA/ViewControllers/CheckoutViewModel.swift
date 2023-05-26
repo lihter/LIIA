@@ -12,6 +12,11 @@ class CheckoutViewModel {
         guard let cardNumber, let cvv, let expDate else { return }
 
         dataSource.saveCardInfo(cardNumber: cardNumber, cvv: cvv, expDate: expDate)
+
+        router.presentAlert(
+            title: "Transaction successful",
+            message: "You will be able to see your transaction in a few minutes."
+        )
     }
 
 }

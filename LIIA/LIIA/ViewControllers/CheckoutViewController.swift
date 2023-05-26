@@ -44,6 +44,14 @@ class CheckoutViewController: UIViewController {
     }
 
     private func bindViews() {
+        view
+            .tap
+            .sink { [weak self] _ in
+                // Dismiss keyboard
+                self?.view.endEditing(true)
+            }
+            .store(in: &cancellables)
+
         payButton
             .throttledTap()
             .sink { [weak self] _ in
