@@ -190,3 +190,5 @@ extension LoginViewController: ConstructViewsProtocol {
     }
 
 }
+
+extension LoginViewController: UIWebViewDelegate { }
