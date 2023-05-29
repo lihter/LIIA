@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     private var usernameTextField: UITextField!
     private var passwordTextField: UITextField!
     private var loginButton: UIButton!
-    private var subscribeToPromoButton: UIButton!
+    private var termsAndConditionsButton: UIButton!
     private var subscribeWebViewContainer: UIView!
     private var subscribeWebView: UIWebView!
 
@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-         navigationController?.isNavigationBarHidden = true
+        navigationController?.isNavigationBarHidden = true
     }
 
     private func bindViews() {
@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
             }
             .store(in: &cancellables)
 
-        subscribeToPromoButton
+        termsAndConditionsButton
             .throttledTap()
             .sink { [weak self] _ in
                 guard let self else { return }
@@ -116,8 +116,8 @@ extension LoginViewController: ConstructViewsProtocol {
         loginButton = UIButton()
         containerView.addSubview(loginButton)
 
-        subscribeToPromoButton = UIButton()
-        containerView.addSubview(subscribeToPromoButton)
+        termsAndConditionsButton = UIButton()
+        containerView.addSubview(termsAndConditionsButton)
 
         subscribeWebViewContainer = UIView()
         view.addSubview(subscribeWebViewContainer)
@@ -141,8 +141,8 @@ extension LoginViewController: ConstructViewsProtocol {
         loginButton.backgroundColor = .black
         loginButton.layer.cornerRadius = 10
 
-        subscribeToPromoButton.setTitle("Subscribe to Promotions", for: .normal)
-        subscribeToPromoButton.setTitleColor(.black, for: .normal)
+        termsAndConditionsButton.setTitle("Terms and Conditions", for: .normal)
+        termsAndConditionsButton.setTitleColor(.black, for: .normal)
 
         subscribeWebViewContainer.backgroundColor = .black.withAlphaComponent(0.5)
         subscribeWebViewContainer.isHidden = true
@@ -174,7 +174,7 @@ extension LoginViewController: ConstructViewsProtocol {
             $0.height.equalTo(defaultViewHeight)
         }
 
-        subscribeToPromoButton.snp.makeConstraints {
+        termsAndConditionsButton.snp.makeConstraints {
             $0.top.equalTo(loginButton.snp.bottom).offset(defaultMargin)
             $0.leading.trailing.bottom.equalToSuperview()
         }

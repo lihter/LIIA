@@ -26,6 +26,12 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.isNavigationBarHidden = true
+    }
+
     private func setTabBar() {
         tabBarItem = UITabBarItem(
             title: "Home",
