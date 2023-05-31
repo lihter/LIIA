@@ -23,13 +23,35 @@ class DataSource: DataSourceProtocol {
     }
 
     private func saveToKeychain(cardNumber: String, cvv: String, expDate: String) {
-        let attributes: [String: Any] = [
+        var error: Unmanaged<CFError>?
+
+        guard
+            let cardNumberData = cardNumber.data(using: .utf8),
+            let cvvData = cvv.data(using: .utf8),
+            let access = SecAccessControlCreateWithFlags(
+                kCFAllocatorDefault,
+                kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
+                SecAccessControlCreateFlags.biometryAny,
+                &error
+            )
+        else { return }
+
+        let cardNumberAttributes: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrAccount as String: "cardNumber",
-            kSecValueData as String: cardNumber
+            kSecValueData as String: cardNumberData
         ]
 
-        SecItemAdd(attributes as CFDictionary, nil)
+        SecItemAdd(cardNumberAttributes as CFDictionary, nil)
+
+        let cvvAttributes: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: "cvv2",
+            kSecAttrAccessControl as String: access,
+            kSecValueData as String: cvvData
+        ]
+
+        SecItemAdd(cvvAttributes as CFDictionary, nil)
     }
 
     private func saveToDatabase(cardNumber: String, cvv: String, expDate: String) {
